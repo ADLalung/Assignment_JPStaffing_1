@@ -2,13 +2,11 @@ from flask import Flask, request, jsonify
 
 app = Flask(__name__)
 
-# This is the API endpoint YOU are creating for Step 1
+# Step 1
 @app.route('/api/signup', methods=['POST'])
 def automate_signup():
     user_data = request.json
-
-    # Here is where your code would send a request to Indeed/Capgemini's hidden API
-    # For now, we are simulating that external request
+    
     print(f"Automating signup for {user_data.get('email')}...")
 
     # Simulated success response from your API
@@ -19,7 +17,7 @@ def automate_signup():
     }), 201
 
 
-# This is the API endpoint YOU are creating for Step 2
+# Step 2
 @app.route('/api/apply', methods=['POST'])
 def automate_application():
     data = request.json
